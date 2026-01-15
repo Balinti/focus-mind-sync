@@ -53,6 +53,8 @@ focus-mind-sync/
 │   ├── metrics.ts              # Metrics calculation
 │   ├── stripe.ts               # Stripe client
 │   └── env.ts                  # Environment helpers
+├── scripts/
+│   └── migrate.js              # Database migration script
 ├── supabase/
 │   ├── schema.sql              # Database schema
 │   └── rls.sql                 # Row Level Security policies
@@ -146,6 +148,18 @@ focus-mind-sync/
 npm install
 npm run dev
 ```
+
+## Database Migration
+
+To apply the database schema to your Supabase project:
+
+```bash
+DATABASE_URL="postgresql://postgres:[password]@db.[project-ref].supabase.co:5432/postgres" npm run db:migrate
+```
+
+Or run the SQL files directly in the Supabase SQL Editor:
+1. Run `supabase/schema.sql` to create tables
+2. Run `supabase/rls.sql` to apply Row Level Security policies
 
 ## Deployment
 
